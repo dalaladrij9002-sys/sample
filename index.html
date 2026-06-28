@@ -1,0 +1,576 @@
+cat > /home/claude/dhriti-v2/index.html << 'ENDOFHTML'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dhriti — Beyond Talent | Fan Merchandise Store</title>
+  <meta name="description" content="Dhriti is a premium fan merchandise brand. Keychains, wall art, mugs, desk mats, stationery and more — for sports, anime, gaming and entertainment fans.">
+  <meta name="keywords" content="Dhriti, fan merchandise, anime merch, sports fan gifts, keychains, posters, desk mat, mugs, stickers India">
+  <meta name="author" content="Dhriti">
+  <link rel="canonical" href="https://dhriti.in/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dhriti — Beyond Talent | Fan Merchandise">
+  <meta property="og:description" content="Premium fan merchandise for sports, anime, gaming and entertainment fans. Keychains, wall art, mugs, stationery and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dhriti.in/">
+  <meta property="og:image" content="https://dhriti.in/images/og-cover.jpg">
+  <meta property="og:site_name" content="Dhriti">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dhriti — Beyond Talent">
+  <meta name="twitter:description" content="Premium fan merchandise for real fans.">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Store","name":"Dhriti","description":"Premium fan merchandise brand","url":"https://dhriti.in","image":"https://dhriti.in/images/og-cover.jpg","priceRange":"₹₹","sameAs":["https://instagram.com/dhriti.store"]}
+  </script>
+
+  <!-- Google Fonts: Bebas Neue + Oswald + Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230055ff'/%3E%3Ctext y='.88em' font-size='72' font-family='Arial' font-weight='900' fill='white' x='12'%3ED%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     SEARCH OVERLAY
+═══════════════════════════════════════════════════ -->
+<div class="search-overlay" id="search-overlay" role="dialog" aria-label="Search">
+  <button class="search-close" id="search-close" aria-label="Close search">✕</button>
+  <div class="search-input-wrap">
+    <input type="search" class="search-input" id="search-input" placeholder="Search products…" autocomplete="off">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--grey-mid);flex-shrink:0"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+  </div>
+  <div class="search-results-grid" id="search-results"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     NAV
+═══════════════════════════════════════════════════ -->
+<nav id="nav">
+  <div class="container nav-inner">
+
+    <a href="index.html" class="nav-logo">
+      <span class="nav-logo-name">DHRITI</span>
+      <span class="nav-logo-tag">Beyond Talent</span>
+    </a>
+
+    <div class="nav-center">
+      <a href="#featured"    class="nav-link">Best Sellers</a>
+      <a href="#new-arrivals" class="nav-link">New Arrivals</a>
+      <a href="#all-products" class="nav-link">All Products</a>
+      <a href="#about"       class="nav-link">About</a>
+      <a href="#contact"     class="nav-link">Contact</a>
+    </div>
+
+    <div class="nav-right">
+      <button class="nav-search-btn" aria-label="Search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <a href="#all-products" class="btn btn-primary btn-sm">Shop Now</a>
+    </div>
+
+    <button class="nav-ham" id="nav-ham" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="nav-drawer" id="nav-drawer">
+    <a href="#featured"     class="nav-drawer-link">Best Sellers</a>
+    <a href="#new-arrivals"  class="nav-drawer-link">New Arrivals</a>
+    <a href="#all-products"  class="nav-drawer-link">All Products</a>
+    <a href="#about"         class="nav-drawer-link">About</a>
+    <a href="#contact"       class="nav-drawer-link">Contact</a>
+    <button class="nav-search-btn search-open" style="align-self:flex-start;margin-top:.5rem;width:auto;padding:.55rem 1rem;border-radius:6px;gap:.5rem;display:flex;align-items:center;font-size:.82rem;color:var(--white)">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      Search Products
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-noise" aria-hidden="true"></div>
+  <div class="hero-gradient" aria-hidden="true"></div>
+
+  <div class="container">
+    <div class="hero-content">
+
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow-dot"></span>
+        <span class="t-label">Fan Merchandise · Since 2024</span>
+      </div>
+
+      <h1 class="hero-title">DHRITI</h1>
+      <span class="hero-title-line2">Beyond Talent</span>
+
+      <div class="hero-divider" aria-hidden="true"></div>
+
+      <p class="hero-sub">Merchandise made for real fans. Sports, anime, gaming, entertainment — if you're passionate about it, we've made something for you.</p>
+
+      <div class="hero-actions">
+        <a href="#all-products" class="btn btn-primary btn-lg">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          Explore Collection
+        </a>
+        <a href="#categories" class="btn btn-outline btn-lg">Browse by Category</a>
+      </div>
+
+      <div class="hero-trust">
+        <div class="hero-trust-item"><span class="hero-trust-icon">✓</span> No advance payment</div>
+        <div class="hero-trust-item"><span class="hero-trust-icon">📦</span> Careful packaging</div>
+        <div class="hero-trust-item"><span class="hero-trust-icon">🚚</span> Pan-India delivery</div>
+        <div class="hero-trust-item"><span class="hero-trust-icon">🔄</span> Easy returns</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll" aria-hidden="true">
+    <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     MARQUEE
+═══════════════════════════════════════════════════ -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-inner">
+    <div class="marquee-item">Fan Accessories <span class="marquee-sep">◆</span></div>
+    <div class="marquee-item">Wall Art &amp; Decor <span class="marquee-sep">◆</span></div>
+    <div class="marquee-item">Drinkware &amp; Desk Essentials <span class="marquee-sep">◆</span></div>
+    <div class="marquee-item">Stationery <span class="marquee-sep">◆</span></div>
+    <div class="marquee-item">Beyond Talent <span class="marquee-sep">◆</span></div>
+    <div class="marquee-item">Premium Quality <span class="marquee-sep">◆</span></div>
+    <div class="marquee-item">Fan Accessories <span class="marquee-sep">◆</span></div>
+    <div class="marquee-item">Wall Art &amp; Decor <span class="marquee-sep">◆</span></div>
+    <div class="marquee-item">Drinkware &amp; Desk Essentials <span class="marquee-sep">◆</span></div>
+    <div class="marquee-item">Stationery <span class="marquee-sep">◆</span></div>
+    <div class="marquee-item">Beyond Talent <span class="marquee-sep">◆</span></div>
+    <div class="marquee-item">Premium Quality <span class="marquee-sep">◆</span></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     CATEGORIES
+═══════════════════════════════════════════════════ -->
+<section id="categories" class="section-sm" style="background:var(--black-2)">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;max-width:540px;margin:0 auto var(--space-xl)">
+      <p class="t-label" style="margin-bottom:.6rem">Shop by Category</p>
+      <h2 class="t-heading">What kind of fan <span class="t-blue">are you?</span></h2>
+    </div>
+  </div>
+  <div class="cat-grid" id="cat-grid"><!-- JS renders --></div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     BEST SELLERS
+═══════════════════════════════════════════════════ -->
+<section id="featured" class="section">
+  <div class="container">
+    <div class="section-header-row">
+      <div class="reveal">
+        <p class="t-label" style="margin-bottom:.5rem">Fan Favourites</p>
+        <h2 class="t-heading">Best <span class="t-blue">Sellers</span></h2>
+      </div>
+      <a href="#all-products" class="btn-ghost reveal d2">View All →</a>
+    </div>
+    <div class="product-grid" id="featured-grid"><!-- JS renders --></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     NEW ARRIVALS
+═══════════════════════════════════════════════════ -->
+<section id="new-arrivals" class="section" style="background:var(--black-2)">
+  <div class="container">
+    <div class="section-header-row">
+      <div class="reveal">
+        <p class="t-label" style="margin-bottom:.5rem">Just Dropped</p>
+        <h2 class="t-heading">New <span class="t-blue">Arrivals</span></h2>
+      </div>
+    </div>
+    <div class="arrivals-layout" id="arrivals-layout"><!-- JS renders --></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     ALL PRODUCTS
+═══════════════════════════════════════════════════ -->
+<section id="all-products" class="section">
+  <div class="container">
+    <div class="section-header-row">
+      <div class="reveal">
+        <p class="t-label" style="margin-bottom:.5rem">Full Catalogue</p>
+        <h2 class="t-heading">All <span class="t-blue">Products</span></h2>
+      </div>
+      <div class="filter-bar reveal d1" id="filter-bar">
+        <button class="filter-btn active" data-cat="all">All</button>
+        <!-- Category filter buttons added by JS -->
+      </div>
+    </div>
+    <div class="product-grid" id="products-grid"><!-- JS renders --></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     WHY DHRITI
+═══════════════════════════════════════════════════ -->
+<section id="why-us" class="section" style="background:var(--black-2)">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;max-width:520px;margin:0 auto var(--space-xl)">
+      <p class="t-label" style="margin-bottom:.6rem">Why Dhriti</p>
+      <h2 class="t-heading">Made for fans <span class="t-blue">by fans</span></h2>
+    </div>
+  </div>
+  <div class="why-grid">
+    <div class="why-item reveal">
+      <div class="why-icon">🏆</div>
+      <h3 class="why-title">Premium Quality</h3>
+      <p class="why-body">Every product is sourced from quality-first manufacturers. We test before we sell, so what you receive is what you saw.</p>
+    </div>
+    <div class="why-item reveal d1">
+      <div class="why-icon">🎨</div>
+      <h3 class="why-title">Fan-Focused Designs</h3>
+      <p class="why-body">Our designs are made by fans. We celebrate the characters, athletes, and communities you love with artwork that does them justice.</p>
+    </div>
+    <div class="why-item reveal d2">
+      <div class="why-icon">📦</div>
+      <h3 class="why-title">Careful Packaging</h3>
+      <p class="why-body">Every order is wrapped with care — bubble-wrapped, boxed, and sealed so it arrives in perfect condition. Collectibles deserve that.</p>
+    </div>
+    <div class="why-item reveal d3">
+      <div class="why-icon">💬</div>
+      <h3 class="why-title">Reliable Support</h3>
+      <p class="why-body">Real humans, fast replies. We respond on WhatsApp and email within hours. No bots, no long wait times — just us.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     TESTIMONIALS
+═══════════════════════════════════════════════════ -->
+<section id="reviews" class="section">
+  <div class="container">
+    <div class="section-header reveal" style="text-align:center;max-width:480px;margin:0 auto var(--space-xl)">
+      <p class="t-label" style="margin-bottom:.6rem">Real Customers</p>
+      <h2 class="t-heading">What fans <span class="t-blue">say</span></h2>
+    </div>
+    <div class="testi-grid" id="testi-grid"><!-- JS renders --></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════════════════ -->
+<section id="about" class="section" style="background:var(--black-2)">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-img-block reveal">
+        <!-- Replace with a real brand/lifestyle image -->
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#111 0%,#1a1a2e 50%,#111 100%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem">
+          <span style="font-family:'Bebas Neue',sans-serif;font-size:6rem;color:rgba(0,85,255,.15);line-height:1">DHRITI</span>
+          <span style="font-size:.7rem;letter-spacing:.25em;text-transform:uppercase;color:var(--grey)">Brand Image</span>
+        </div>
+        <div class="about-accent"></div>
+      </div>
+      <div class="about-body reveal d1">
+        <p class="t-label" style="margin-bottom:.6rem">Our Story</p>
+        <h2 class="t-heading" style="margin-bottom:1.5rem">Born from <span class="t-blue">fandom.</span></h2>
+        <p>Dhriti — the Sanskrit word for determination, discipline, and mental strength. We chose that name because being a real fan takes all of those things.</p>
+        <p>We started as fans who wanted merchandise that actually felt premium. Not cheap fast-fashion prints. Not flimsy keychains. Real, collectible, gift-worthy items made with care — at prices that don't make you wince.</p>
+        <p>Today we make merchandise for sports fans, anime lovers, gamers, and every other passionate community in between. The common thread? People who go beyond casual. People who go beyond talent.</p>
+        <div class="about-pills">
+          <div class="about-pill"><b>✓</b> Quality Checked</div>
+          <div class="about-pill"><b>✓</b> Fan Approved</div>
+          <div class="about-pill"><b>✓</b> Carefully Packed</div>
+          <div class="about-pill"><b>✓</b> Real Support</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FAQ
+═══════════════════════════════════════════════════ -->
+<section id="faq" class="section">
+  <div class="container">
+    <div style="max-width:760px;margin:0 auto">
+      <div class="section-header reveal" style="margin-bottom:var(--space-xl)">
+        <p class="t-label" style="margin-bottom:.6rem">Have Questions?</p>
+        <h2 class="t-heading">Frequently <span class="t-blue">Asked</span></h2>
+      </div>
+      <div class="faq-list" id="faq-list"><!-- JS renders --></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     CONTACT
+═══════════════════════════════════════════════════ -->
+<section id="contact" class="section" style="background:var(--black-2)">
+  <div class="container">
+    <div class="section-header reveal" style="margin-bottom:var(--space-xl)">
+      <p class="t-label" style="margin-bottom:.6rem">Get in Touch</p>
+      <h2 class="t-heading">We're <span class="t-blue">Here</span></h2>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <p style="color:var(--grey-light);line-height:1.8;margin-bottom:2rem;font-size:.93rem">
+          Questions about an order, a custom request, or bulk enquiry? We typically respond within a few hours during business days.
+        </p>
+        <div class="contact-info-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <div class="contact-label">Email</div>
+            <div class="contact-val">your@email.com</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon">💬</div>
+          <div>
+            <div class="contact-label">WhatsApp</div>
+            <div class="contact-val">+91 XXXXXXXXXX</div>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon">📸</div>
+          <div>
+            <div class="contact-label">Instagram</div>
+            <div class="contact-val">@dhriti.store</div>
+          </div>
+        </div>
+        <div style="margin-top:2rem">
+          <p class="t-label" style="margin-bottom:.75rem">Follow Us</p>
+          <div class="social-row">
+            <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+            <a href="#" class="social-btn" aria-label="Twitter">🐦</a>
+            <a href="#" class="social-btn" aria-label="WhatsApp">💬</a>
+            <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-box reveal d1">
+        <form id="contact-form">
+          <input type="hidden" name="access_key" value="">
+          <input type="hidden" name="subject" value="Enquiry — Dhriti">
+          <input type="checkbox" name="botcheck" style="display:none">
+          <div class="form-row">
+            <div class="field">
+              <label for="c-name">Name</label>
+              <input type="text" id="c-name" name="name" placeholder="Aryan Mehta" required>
+            </div>
+            <div class="field">
+              <label for="c-email">Email</label>
+              <input type="email" id="c-email" name="email" placeholder="aryan@email.com" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="c-sub">Subject</label>
+            <input type="text" id="c-sub" name="subject_line" placeholder="Order question / Custom request / Bulk order…">
+          </div>
+          <div class="field">
+            <label for="c-msg">Message</label>
+            <textarea id="c-msg" name="message" placeholder="Tell us how we can help…" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" id="contact-btn" style="width:100%">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand-name">DHRITI</div>
+        <div class="footer-tagline">Beyond Talent</div>
+        <p class="footer-about">Premium fan merchandise for sports, anime, gaming and entertainment fans. Quality-checked, carefully packed, and delivered across India.</p>
+        <div class="social-row" style="margin-top:1.5rem">
+          <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+          <a href="#" class="social-btn" aria-label="Twitter">🐦</a>
+          <a href="#" class="social-btn" aria-label="WhatsApp">💬</a>
+          <a href="#" class="social-btn" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Shop</p>
+        <ul class="footer-links">
+          <li><a href="#featured">Best Sellers</a></li>
+          <li><a href="#new-arrivals">New Arrivals</a></li>
+          <li><a href="#all-products">All Products</a></li>
+          <li><a href="#categories">Categories</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Company</p>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Shipping Policy</a></li>
+          <li><a href="#">Return Policy</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <p class="footer-col-title">Support</p>
+        <ul class="footer-links">
+          <li><a href="#faq">Order Help</a></li>
+          <li><a href="#contact">Track Order</a></li>
+          <li><a href="#contact">Bulk Orders</a></li>
+          <li><a href="#contact">Custom Orders</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2024 Dhriti. All rights reserved.</span>
+      <span style="color:var(--grey)">Made with ⚡ for fans</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════
+     ORDER MODAL
+═══════════════════════════════════════════════════ -->
+<div class="overlay" id="order-overlay" role="dialog" aria-modal="true" aria-label="Place Order">
+  <div class="modal">
+
+    <div class="modal-head">
+      <div>
+        <div class="modal-product-label">Ordering</div>
+        <div class="modal-product-name" id="modal-product-name">Product</div>
+        <div class="modal-product-price" id="modal-product-price">₹0</div>
+      </div>
+      <button class="modal-x" id="modal-close" aria-label="Close">✕</button>
+    </div>
+
+    <div id="modal-form-wrap">
+      <form id="order-form" class="modal-body">
+        <input type="hidden" name="access_key" id="order-access-key">
+        <input type="hidden" name="subject" value="🛒 New Order — Dhriti">
+        <input type="hidden" name="from_name" value="Dhriti Order System">
+        <input type="checkbox" name="botcheck" style="display:none">
+        <input type="hidden" name="product_name"  id="order-product-name">
+        <input type="hidden" name="product_price" id="order-product-price">
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+          <div class="field">
+            <label for="o-name">Full Name *</label>
+            <input type="text" id="o-name" name="customer_name" placeholder="Aryan Mehta" required>
+          </div>
+          <div class="field">
+            <label for="o-phone">Phone *</label>
+            <input type="tel" id="o-phone" name="phone" placeholder="+91 98765 43210" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="o-email">Email *</label>
+          <input type="email" id="o-email" name="email" placeholder="aryan@email.com" required>
+        </div>
+        <div class="field">
+          <label for="o-addr">Delivery Address *</label>
+          <textarea id="o-addr" name="address" rows="2" placeholder="Flat no., Street, City, State, PIN" required></textarea>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+          <div class="field">
+            <label for="order-size">Size / Variant *</label>
+            <select id="order-size" name="size" required>
+              <option value="">Select…</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Quantity</label>
+            <div class="qty-row">
+              <button type="button" class="qty-btn" id="qty-minus">−</button>
+              <span class="qty-num" id="qty-display">1</span>
+              <button type="button" class="qty-btn" id="qty-plus">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="o-notes">Additional Notes</label>
+          <input type="text" id="o-notes" name="notes" placeholder="Preferred design, gift message, anything else…">
+        </div>
+      </form>
+
+      <div class="modal-foot">
+        <button type="button" class="modal-submit" id="modal-submit-btn"
+          onclick="document.getElementById('order-form').dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}))">
+          Place Order — No Payment Now
+        </button>
+        <p class="modal-note">No payment required. We'll contact you to confirm and arrange payment.</p>
+      </div>
+    </div>
+
+    <!-- Success -->
+    <div class="modal-success" id="modal-success">
+      <div class="success-ring">✓</div>
+      <h3 class="success-h">Order Confirmed!</h3>
+      <p class="success-p">
+        Thank you, <strong id="success-name"></strong>!<br>
+        Your order for <strong id="success-product"></strong> is placed. Check your inbox for a confirmation. We'll call you shortly.
+      </p>
+      <button class="btn btn-primary" onclick="closeModal()" style="margin-top:1.25rem">Continue Shopping</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     BACK TO TOP + TOASTS
+═══════════════════════════════════════════════════ -->
+<button id="back-to-top" aria-label="Back to top">↑</button>
+<div class="toast-rack" id="toast-rack"></div>
+
+<!-- SCRIPTS -->
+<script src="js/products.js"></script>
+<script>
+// Build category filter buttons from CATEGORIES data
+document.addEventListener('DOMContentLoaded', () => {
+  const bar = document.getElementById('filter-bar');
+  if (bar && window.CATEGORIES) {
+    CATEGORIES.forEach(cat => {
+      const btn = document.createElement('button');
+      btn.className = 'filter-btn';
+      btn.dataset.cat = cat.id;
+      btn.textContent = cat.label;
+      bar.appendChild(btn);
+    });
+  }
+  // Set access key on contact form
+  const cak = document.querySelector('#contact-form input[name="access_key"]');
+  if (cak) cak.value = STORE_CONFIG.web3formsKey;
+});
+function closeModal() {
+  document.getElementById('order-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+</script>
+<script src="js/main.js"></script>
+</body>
+</html>
+ENDOFHTML
+echo "index.html written"
