@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product — Dhriti</title>
+  <meta name="description" content="Premium sports product from Dhriti.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (updated by JS) -->
+  <meta property="og:title" content="Product — Dhriti">
+  <meta property="og:type" content="product">
+  <meta property="og:site_name" content="Dhriti">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%230055ff'/%3E%3Ctext y='.9em' font-size='70' font-family='Arial' font-weight='900' fill='white' x='10'%3ED%3C/text%3E%3C/svg%3E">
+
+  <style>
+    /* Detail-page specifics */
+    .detail-section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--grey3);
+      margin-bottom: 0.6rem;
+      display: block;
+    }
+    .related-section { padding: 5rem 0; background: var(--black2); }
+    .size-chart-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 0.75rem;
+      font-size: 0.82rem;
+    }
+    .size-chart-table th,
+    .size-chart-table td {
+      padding: 0.6rem 1rem;
+      border: 1px solid var(--grey);
+      text-align: center;
+    }
+    .size-chart-table th {
+      background: var(--black3);
+      color: var(--grey3);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-size: 0.72rem;
+    }
+    .size-chart-table td { color: var(--white); }
+    .detail-divider {
+      height: 1px;
+      background: var(--grey);
+      margin: 1.75rem 0;
+    }
+    .sticky-order-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(10,10,10,0.97);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid var(--grey);
+      padding: 1rem 1.25rem;
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      z-index: 800;
+    }
+    .sticky-order-bar.visible { display: flex; }
+    @media (max-width: 768px) { .sticky-order-bar.visible { display: flex; } }
+  </style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════════════════ -->
+<nav id="nav">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">DHR<span>I</span>TI</a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#products">Products</a></li>
+      <li><a href="index.html#categories">Categories</a></li>
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+
+    <a href="index.html#products" class="btn btn-primary btn-sm nav-cta">Shop Now</a>
+
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile" id="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="index.html#products">Products</a>
+    <a href="index.html#categories">Categories</a>
+    <a href="index.html#about">About</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════════════════════
+     PRODUCT DETAIL — populated by JS
+════════════════════════════════════════════════ -->
+<div id="product-detail-root">
+
+  <!-- Hero split: image + info -->
+  <div class="product-detail-hero">
+
+    <!-- Left: image -->
+    <div class="product-detail-imgs">
+      <div class="product-main-img" id="detail-main-img">
+        <!-- Populated by JS -->
+        <div class="product-img-placeholder">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span>Product Image</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: details -->
+    <div class="product-detail-info">
+      <div id="product-breadcrumb" class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="sep">/</span>
+        <span>Product</span>
+      </div>
+
+      <div id="detail-tag" style="margin-bottom:0.75rem"></div>
+
+      <h1 class="display-lg" id="detail-name" style="margin-bottom:0.25rem">Loading...</h1>
+      <div class="detail-price" id="detail-price">₹—</div>
+
+      <p class="detail-desc" id="detail-description">—</p>
+
+      <div class="detail-divider"></div>
+
+      <!-- Features -->
+      <div style="margin-bottom:1.75rem">
+        <span class="detail-section-label">Key Features</span>
+        <div id="detail-features"><!-- Populated by JS --></div>
+      </div>
+
+      <div class="detail-divider"></div>
+
+      <!-- Sizes -->
+      <div style="margin-bottom:1.75rem">
+        <span class="detail-section-label">Select Size</span>
+        <div class="size-grid" id="detail-size-grid"><!-- Populated by JS --></div>
+      </div>
+
+      <!-- Size chart -->
+      <details style="margin-bottom:1.75rem">
+        <summary style="cursor:pointer;color:var(--blue);font-size:0.85rem;font-weight:600;letter-spacing:0.06em;list-style:none;display:flex;align-items:center;gap:0.4rem">
+          <span>↕</span> View Size Chart
+        </summary>
+        <table class="size-chart-table" style="margin-top:1rem">
+          <thead>
+            <tr><th>Size</th><th>Chest (in)</th><th>Waist (in)</th><th>Length (in)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>XS</td><td>34–35</td><td>27–28</td><td>26</td></tr>
+            <tr><td>S</td><td>36–37</td><td>29–30</td><td>27</td></tr>
+            <tr><td>M</td><td>38–40</td><td>31–33</td><td>28</td></tr>
+            <tr><td>L</td><td>41–43</td><td>34–36</td><td>29</td></tr>
+            <tr><td>XL</td><td>44–46</td><td>37–39</td><td>30</td></tr>
+            <tr><td>XXL</td><td>47–49</td><td>40–42</td><td>31</td></tr>
+          </tbody>
+        </table>
+      </details>
+
+      <!-- CTA -->
+      <button class="btn btn-primary btn-lg" id="detail-order-btn" style="width:100%;justify-content:center">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        Order Now — No Payment Required
+      </button>
+
+      <div style="display:flex;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:var(--grey3)">
+          <span style="color:#00cc88">✓</span> No advance payment
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:var(--grey3)">
+          <span style="color:#00cc88">✓</span> We'll call to confirm
+        </div>
+        <div style="display:flex;align-items:center;gap:0.5rem;font-size:0.8rem;color:var(--grey3)">
+          <span style="color:#00cc88">✓</span> Fast delivery
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Related Products -->
+  <section class="related-section">
+    <div class="container">
+      <div class="section-header reveal" style="margin-bottom:2.5rem">
+        <p class="section-label">You Might Also Like</p>
+        <h2 class="section-title" style="margin-top:0.5rem">Related <span>Products</span></h2>
+      </div>
+      <div class="product-grid" id="related-products-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+</div><!-- /#product-detail-root -->
+
+<!-- ════════════════════════════════════════════════
+     STICKY ORDER BAR (mobile)
+════════════════════════════════════════════════ -->
+<div class="sticky-order-bar" id="sticky-bar">
+  <div>
+    <div style="font-size:0.75rem;color:var(--grey3)">Order Now</div>
+    <div id="sticky-price" style="font-family:var(--font-display);font-size:1.3rem;font-weight:800">₹—</div>
+  </div>
+  <button class="btn btn-primary" id="sticky-order-btn">Order Now</button>
+</div>
+
+<!-- ════════════════════════════════════════════════
+     ORDER MODAL (same as homepage)
+════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title-block">
+        <div style="font-size:0.7rem;color:var(--grey3);text-transform:uppercase;letter-spacing:0.15em;margin-bottom:0.3rem">Place Your Order</div>
+        <div class="modal-product-name" id="modal-product-name">Product Name</div>
+        <div class="modal-product-price" id="modal-product-price">₹0</div>
+      </div>
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+    </div>
+
+    <div id="modal-form-content">
+      <form id="order-form" class="modal-body">
+        <input type="hidden" name="access_key" id="order-access-key">
+        <input type="hidden" name="subject" value="🛒 New Order — Dhriti">
+        <input type="hidden" name="from_name" value="Dhriti Order System">
+        <input type="checkbox" name="botcheck" style="display:none">
+        <input type="hidden" name="product_name"  id="order-product-name">
+        <input type="hidden" name="product_price" id="order-product-price">
+
+        <div class="modal-row">
+          <div class="field">
+            <label for="o-name">Full Name *</label>
+            <input type="text" id="o-name" name="customer_name" placeholder="Rahul Sharma" required>
+          </div>
+          <div class="field">
+            <label for="o-phone">Phone Number *</label>
+            <input type="tel" id="o-phone" name="phone" placeholder="+91 98765 43210" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="o-email">Email Address *</label>
+          <input type="email" id="o-email" name="email" placeholder="rahul@email.com" required>
+        </div>
+        <div class="field">
+          <label for="o-address">Delivery Address *</label>
+          <textarea id="o-address" name="address" placeholder="House/Flat No., Street, City, State, PIN Code" rows="3" required></textarea>
+        </div>
+        <div class="modal-row">
+          <div class="field">
+            <label for="order-size">Size *</label>
+            <select id="order-size" name="size" required>
+              <option value="">Select Size</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Quantity</label>
+            <div class="qty-control">
+              <button type="button" class="qty-btn" id="qty-minus">−</button>
+              <span class="qty-display" id="qty-display">1</span>
+              <button type="button" class="qty-btn" id="qty-plus">+</button>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="o-notes">Additional Notes</label>
+          <input type="text" id="o-notes" name="notes" placeholder="Preferred colour, delivery date, etc.">
+        </div>
+      </form>
+
+      <div class="modal-footer">
+        <button type="button" class="modal-submit-btn" id="modal-submit-btn"
+          onclick="document.getElementById('order-form').dispatchEvent(new Event('submit',{bubbles:true,cancelable:true}))">
+          Place Order — No Payment Now
+        </button>
+        <p style="text-align:center;color:var(--grey3);font-size:0.75rem;margin-top:0.75rem">
+          No payment required. We'll contact you to confirm.
+        </p>
+      </div>
+    </div>
+
+    <div class="modal-success" id="modal-success">
+      <div class="success-icon">✓</div>
+      <h3 class="success-title">Order Received!</h3>
+      <p class="success-sub">
+        Thank you, <strong id="success-customer-name"></strong>! Your order for <strong id="success-product-name"></strong> has been placed. Check your email for confirmation. We'll call you shortly.
+      </p>
+      <button class="btn btn-primary" onclick="closeOrderModal()" style="margin-top:1rem">Continue Shopping</button>
+    </div>
+  </div>
+</div>
+
+<!-- Back to Top -->
+<button id="back-to-top" aria-label="Back to top">↑</button>
+<div class="toast-container" id="toast-container"></div>
+
+<!-- Scripts -->
+<script src="js/products.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Set Web3Forms key
+  document.addEventListener('DOMContentLoaded', () => {
+    const ak = document.getElementById('order-access-key');
+    if (ak) ak.value = STORE_CONFIG.web3formsKey;
+
+    // Sticky bar
+    const stickyBar = document.getElementById('sticky-bar');
+    const stickyOrderBtn = document.getElementById('sticky-order-btn');
+    const detailInfo = document.querySelector('.product-detail-info');
+
+    if (stickyBar && detailInfo) {
+      const io = new IntersectionObserver(entries => {
+        stickyBar.classList.toggle('visible', !entries[0].isIntersecting);
+      }, { threshold: 0 });
+      io.observe(detailInfo.querySelector('#detail-order-btn'));
+    }
+
+    if (stickyOrderBtn) {
+      stickyOrderBtn.addEventListener('click', () => {
+        const detailBtn = document.getElementById('detail-order-btn');
+        if (detailBtn) detailBtn.click();
+      });
+    }
+  });
+
+  function closeOrderModal() {
+    document.getElementById('modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+</script>
+</body>
+</html>
